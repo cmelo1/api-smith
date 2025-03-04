@@ -1,0 +1,65 @@
+name: Generate and Deploy API Documentation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'fast-vin/docs/openapi.yaml'
+      - 'fast-vin/docs/template.hbs'
+      - '.github/workflows/docs.yml'
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Redoc CLI
+        run: npm install -g redoc-cli
+
+      - name: Generate Fast VIN API Documentation
+        run: |
+          redoc-cli bundle fast-vin/docs/openapi.yaml \
+            --output fast-vin/docs/index.html \
+            --title "Fast VIN Decoder API Documentation" \
+            --template fast-vin/docs/template.hbs
+
+      - name: Update main documentation
+        run: |
+          mkdir -p docs
+          cat > docs/index.md << 'EOL'
+          # API Smith Documentation
+
+          Welcome to the API Smith documentation. This repository contains various API implementations and tools.
+
+          ## Available APIs
+
+          ### [Fast VIN Decoder API](../fast-vin/docs/)
+          A robust API for decoding Vehicle Identification Numbers (VINs) using NHTSA data.
+
+          ### [FDA API](../fda-api/docs/)
+          Documentation coming soon.
+
+          ### [200 Persona](../200-persona/docs/)
+          Documentation coming soon.
+
+          ## Getting Started
+
+          Choose an API from the list above to view its complete documentation.
+
+          ## Support
+
+          If you encounter any issues or have questions, please open an issue on our [GitHub repository](https://github.com/${{ github.repository }}).
+          EOL
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          force_orphan: true 

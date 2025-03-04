@@ -5,11 +5,11 @@ info:
     The **Fast VIN Decoder API** allows users to decode Vehicle Identification Numbers (VINs) and retrieve vehicle details based on **NHTSA** data.
   version: 1.0.0
 servers:
-  - url: https://your-api-url.com
+  - url: https://fast-vin-lite.p.rapidapi.com
     description: Production Server
 
 paths:
-  /decode-vin/{vin}:
+  /decode-vin-lite/{vin}:
     get:
       summary: Decode a VIN
       description: Retrieves vehicle details from a VIN using NHTSA data.
