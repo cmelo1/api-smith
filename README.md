@@ -1,34 +1,38 @@
 # API-SMITH Documentation Repository
 
-Welcome to the **API-SMITH Documentation Repository**, a central hub for all API documentation hosted on **RapidAPI**.
+Welcome to the **API-SMITH Documentation Repository**, a collection of API implementations and their documentation.
 
 ## 📌 Available APIs
 
 Explore our collection of APIs:
 
-- **[FAST VIN](https://github.com/your-username/fast-vin/)** – A powerful VIN decoder supporting multiple formats.
-- **[200+ Persona ChatGPT](https://github.com/your-username/200-persona/)** – Engage in conversations with over 200 unique ChatGPT personas.
-- **[FDA API](https://github.com/your-username/fda-api/)** – *(Coming soon)* Access FDA-related data and insights.
+- **[FAST VIN](https://github.com/cmelo1/api-smith/tree/main/fast-vin/docs)** – A powerful VIN decoder supporting multiple formats.
+- **[200+ Persona ChatGPT](https://github.com/cmelo1/api-smith/tree/main/200-persona)** – *(Coming soon)* Engage in conversations with over 200 unique ChatGPT personas.
+- **[FDA API](https://github.com/cmelo1/api-smith/tree/main/fda-api)** – *(Coming soon)* Access FDA-related data and insights.
 
-## 🔑 Common Topics *(To-Do)*
+## 📖 Documentation
 
-- **[Authentication](https://github.com/your-username/common/authentication.md)** – Learn about authentication methods across APIs.
-
-## 📖 Usage Guide
-
-1. Click on any API link above to access detailed documentation.
-2. Follow setup and authentication instructions to integrate the APIs into your application.
-3. Check the **Common Topics** section for best practices and security guidelines.
+Visit our [documentation portal](https://cmelo1.github.io/api-smith) for detailed API documentation, including:
+- API endpoints and parameters
+- Authentication methods
+- Request/response formats
+- Code examples
+- Rate limits
 
 ## 🚀 Contributing
 
-We welcome contributions! If you have improvements, open a pull request.
+We welcome contributions! If you'd like to improve any of our APIs:
 
----
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### 📄 License
+## 📝 License
+
 This repository is licensed under [MIT License](LICENSE).
 
 ---
 
-Let me know if you'd like any modifications, and be sure to replace `"your-username"` with your actual GitHub username before pushing the file! 🚀
+For detailed documentation, visit our [GitHub Pages](https://cmelo1.github.io/api-smith). 🚀
