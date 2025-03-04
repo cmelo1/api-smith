@@ -1,0 +1,72 @@
+name: Generate and Deploy API Documentation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'fast-vin/docs/openapi.yaml'
+      - 'fast-vin/docs/template.hbs'
+      - '.github/workflows/docs.yml'
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Redoc CLI
+        run: npm install -g redoc-cli
+
+      - name: Setup docs structure
+        run: |
+          mkdir -p docs/fast-vin
+
+      - name: Generate Fast VIN API Documentation
+        run: |
+          redoc-cli bundle fast-vin/docs/openapi.yaml \
+            --output docs/fast-vin/index.html \
+            --title "Fast VIN Decoder API Documentation" \
+            --template fast-vin/docs/template.hbs
+
+      - name: Create Jekyll configuration
+        run: |
+          cat > docs/_config.yml << 'EOL'
+          title: API Smith
+          description: Documentation for various API implementations
+          theme: jekyll-theme-cayman
+          baseurl: "/api-smith"
+          EOL
+
+      - name: Create main documentation
+        run: |
+          cat > docs/index.md << 'EOL'
+          ---
+          layout: default
+          title: API Smith Documentation
+          ---
+
+          # API Smith Documentation
+
+          Welcome to the API Smith documentation. This repository contains various API implementations and tools.
+
+          ## Available APIs
+
+          ### [Fast VIN Decoder API](./fast-vin/)
+          A robust API for decoding Vehicle Identification Numbers (VINs) using NHTSA data.
+
+          ## Support
+
+          If you encounter any issues or have questions, please open an issue on our [GitHub repository](https://github.com/${{ github.repository }}).
+          EOL
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true 

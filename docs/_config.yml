@@ -1,0 +1,23 @@
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
+
+title: API Smith
+description: Documentation for various API implementations
+show_downloads: false
+
+# Navigation
+nav:
+  - title: Home
+    url: /
+  - title: Fast VIN API
+    url: /fast-vin
+  - title: FDA API
+    url: /fda-api
+  - title: 200 Persona
+    url: /200-persona
+
+# GitHub information
+github:
+  is_project_page: true
+  repository_url: https://github.com/your-username/api-smith 
