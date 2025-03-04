@@ -1,11 +1,17 @@
-# API Smith Documentation
+---
+layout: default
+title: API Smith Documentation
+---
 
-Welcome to the API Smith documentation. This repository contains various API implementations and tools.
+# API Documentation
+
+Welcome to the API Smith documentation portal. Here you'll find comprehensive documentation for all our APIs.
 
 ## Available APIs
 
-### [Fast VIN Decoder API](./fast-vin.html)
-A robust API for decoding Vehicle Identification Numbers (VINs) using NHTSA data. This API provides detailed vehicle information from VIN numbers.
+### [Fast VIN Decoder API](./fast-vin/)
+Decode Vehicle Identification Numbers (VINs) and retrieve detailed vehicle information using NHTSA data.
+[View Documentation →](./fast-vin/)
 
 ### [FDA API](./fda-api.html)
 Documentation coming soon.
@@ -28,8 +34,14 @@ Choose an API from the list above to get started.
 
 If you encounter any issues or have questions, please:
 1. Check the specific API documentation
-2. Open an issue on our [GitHub repository](https://github.com/your-username/api-smith)
+2. Open an issue on our [GitHub repository](https://github.com/${{ github.repository }})
 
 ## Contributing
 
-We welcome contributions! Please see our contributing guidelines for more information. 
+We welcome contributions! Please see our contributing guidelines for more information.
+
+## Quick Links
+
+- [GitHub Repository](https://github.com/${{ github.repository }})
+- [Report an Issue](https://github.com/${{ github.repository }}/issues)
+- [Contributing Guidelines](https://github.com/${{ github.repository }}#contributing) 
