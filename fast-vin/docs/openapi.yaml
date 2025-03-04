@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: Fast VIN Decoder API
+  description: |
+    The **Fast VIN Decoder API** allows users to decode Vehicle Identification Numbers (VINs) and retrieve vehicle details based on **NHTSA** data.
+  version: 1.0.0
+servers:
+  - url: https://your-api-url.com
+    description: Production Server
+
+paths:
+  /decode-vin/{vin}:
+    get:
+      summary: Decode a VIN
+      description: Retrieves vehicle details from a VIN using NHTSA data.
+      parameters:
+        - name: vin
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The Vehicle Identification Number (VIN) to decode.
+        - name: modelyear
+          in: query
+          required: false
+          schema:
+            type: string
+          description: The model year of the vehicle (optional).
+        - name: format
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [json, xml]
+          description: The response format (`json` or `xml`, default is `json`).
+
+      responses:
+        "200":
+          description: VIN decoded successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  VIN:
+                    type: string
+                    example: "JTEBU5JRXJ5543007"
+                  Make:
+                    type: string
+                    example: "TOYOTA"
+                  Model:
+                    type: string
+                    example: "4-Runner"
+                  ModelYear:
+                    type: string
+                    example: "2018"
+                  Trim:
+                    type: string
+                    example: "SR5 Premium"
+                  ErrorText:
+                    type: string
+                    example: "0 - VIN decoded clean. Check Digit (9th position) is correct"
+            application/xml:
+              example: |
+                <?xml version="1.0" encoding="UTF-8"?>
+                <VINLookup>
+                  <VIN>JTEBU5JRXJ5543007</VIN>
+                  <Make>TOYOTA</Make>
+                  <Model>4-Runner</Model>
+                  <ModelYear>2018</ModelYear>
+                  <Trim>SR5 Premium</Trim>
+                  <ErrorText>0 - VIN decoded clean. Check Digit (9th position) is correct</ErrorText>
+                </VINLookup>
+
+        "400":
+          description: Invalid VIN or request parameters.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid VIN format"
+            application/xml:
+              example: |
+                <?xml version="1.0" encoding="UTF-8"?>
+                <Error>
+                  <Message>Invalid VIN format</Message>
+                </Error>
+
+        "500":
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Server Error: Unable to decode VIN"
+            application/xml:
+              example: |
+                <?xml version="1.0" encoding="UTF-8"?>
+                <Error>
+                  <Message>Server Error: Unable to decode VIN</Message>
+                </Error>
