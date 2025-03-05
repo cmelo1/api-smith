@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Count>1</Count>
+    <Message>Results returned successfully. NOTE: Any missing decoded values should be interpreted as NHTSA does not have data on the specific variable. Missing value should NOT be interpreted as an indication that a feature or technology is unavailable for a vehicle.</Message>
+    <SearchCriteria>VIN(s): JTEBU5JRXJ5543007</SearchCriteria>
+    <Results>
+        <DecodedVINValues>
+            <MakeID>448</MakeID>
+            <ModelID>2216</ModelID>
+            <ManufacturerId>1057</ManufacturerId>
+            <VIN>JTEBU5JRXJ5543007</VIN>
+            <BatteryInfo />
+            <BatteryType />
+            <BedType />
+            <BodyCabType />
+            <BodyClass>Sport Utility Vehicle (SUV)/Multi-Purpose Vehicle (MPV)</BodyClass>
+            <EngineCylinders>6</EngineCylinders>
+            <DestinationMarket />
+            <DisplacementCC>4000</DisplacementCC>
+            <DisplacementCI>244.0949763789</DisplacementCI>
+            <DisplacementL>4</DisplacementL>
+            <Doors>5</Doors>
+            <DriveType>4WD/4-Wheel Drive/4x4</DriveType>
+            <DriverAssist />
+            <EngineCycles>4</EngineCycles>
+            <EngineModel>1GR-FE</EngineModel>
+            <EngineKW />
+            <EntertainmentSystem />
+            <FuelTypePrimary>Gasoline</FuelTypePrimary>
+            <GVWR>Class 2E: 6,001 - 7,000 lb (2,722 - 3,175 kg)</GVWR>
+            <Make>TOYOTA</Make>
+            <Manufacturer>TOYOTA MOTOR CORPORATION</Manufacturer>
+            <Model>4-Runner</Model>
+            <ModelYear>2018</ModelYear>
+            <PlantCity>TAHARA</PlantCity>
+            <Seats>5</Seats>
+            <Series>GRN280L/GRN285L</Series>
+            <SteeringLocation>Left-Hand Drive (LHD)</SteeringLocation>
+            <TransmissionStyle>Automatic</TransmissionStyle>
+            <Trim>SR5/SR5 Premium/TRD Off Road/TRD Off Road Premium/Ltd/TRD Pro</Trim>
+            <VehicleType>MULTIPURPOSE PASSENGER VEHICLE (MPV)</VehicleType>
+            <Windows />
+            <Axles>2</Axles>
+            <BrakeSystemType />
+            <BatteryCells />
+            <BedLengthIN />
+            <BrakeSystemDesc>Calipers / Front Vented Discs</BrakeSystemDesc>
+            <CurbWeightLB />
+            <AirBagLocCurtain>All Rows</AirBagLocCurtain>
+            <AirBagLocSeatCushion />
+            <BatteryA />
+            <BatteryV />
+            <BatteryKWh />
+            <WheelBaseType>Standard</WheelBaseType>
+            <SeatRows>2</SeatRows>
+            <ValveTrainDesign>Dual Overhead Cam (DOHC)</ValveTrainDesign>
+            <TransmissionSpeeds>5</TransmissionSpeeds>
+            <EngineConfiguration>V-Shaped</EngineConfiguration>
+            <AirBagLocFront>1st Row (Driver and Passenger)</AirBagLocFront>
+            <FuelTypeSecondary />
+            <FuelInjectionType>Multipoint Fuel Injection (MPFI)</FuelInjectionType>
+            <AirBagLocKnee>1st Row (Driver and Passenger)</AirBagLocKnee>
+            <EngineHP>270</EngineHP>
+            <EVDriveUnit />
+            <PlantCountry>JAPAN</PlantCountry>
+            <PlantCompanyName>Toyota Motor Corporation - Tahara Plant</PlantCompanyName>
+            <PlantState>AICHI</PlantState>
+            <Pretensioner>Yes</Pretensioner>
+            <SeatBeltsAll>Manual</SeatBeltsAll>
+            <AdaptiveCruiseControl />
+            <AdaptiveHeadlights />
+            <ABS>Standard</ABS>
+            <CIB />
+            <BlindSpotMon />
+            <NCSABodyType />
+            <NCSAMake />
+            <NCSAModel />
+            <ESC>Standard</ESC>
+            <TractionControl>Standard</TractionControl>
+            <ForwardCollisionWarning>Standard</ForwardCollisionWarning>
+            <LaneDepartureWarning>Standard</LaneDepartureWarning>
+            <LaneKeepSystem />
+            <RearVisibilitySystem>Standard</RearVisibilitySystem>
+            <ParkAssist />
+            <AirBagLocSide>1st Row (Driver and Passenger)</AirBagLocSide>
+            <Trim2>Base Grade</Trim2>
+            <Series2>Wagon body style</Series2>
+            <WheelBaseShort>109.80</WheelBaseShort>
+            <WheelBaseLong />
+            <Note />
+            <Wheels>4</Wheels>
+            <TrailerType>Not Applicable</TrailerType>
+            <TrailerBodyType>Not Applicable</TrailerBodyType>
+            <TrailerLength />
+            <WheelSizeFront />
+            <WheelSizeRear />
+            <OtherRestraintSystemInfo />
+            <CoolingType>Water</CoolingType>
+            <EngineHP_to />
+            <ElectrificationLevel />
+            <ChargerLevel />
+            <ChargerPowerKW />
+            <OtherEngineInfo>PORT / Sequential MPI    , Sequential MPI  </OtherEngineInfo>
+            <BatteryA_to />
+            <BatteryV_to />
+            <BatteryKWh_to />
+            <Turbo />
+            <BasePrice>34810.00</BasePrice>
+            <BatteryModules />
+            <BatteryPacks>1</BatteryPacks>
+            <TopSpeedMPH>114</TopSpeedMPH>
+            <SuggestedVIN />
+            <ErrorCode>0</ErrorCode>
+            <PossibleValues />
+            <AxleConfiguration />
+            <EngineManufacturer>Toyota</EngineManufacturer>
+            <BusLength />
+            <BusFloorConfigType>Not Applicable</BusFloorConfigType>
+            <BusType>Not Applicable</BusType>
+            <OtherBusInfo />
+            <CustomMotorcycleType>Not Applicable</CustomMotorcycleType>
+            <MotorcycleSuspensionType>Not Applicable</MotorcycleSuspensionType>
+            <MotorcycleChassisType>Not Applicable</MotorcycleChassisType>
+            <OtherMotorcycleInfo />
+            <OtherTrailerInfo />
+            <AdditionalErrorText />
+            <CashForClunkers />
+            <TrackWidth />
+            <TPMS>Direct</TPMS>
+            <ActiveSafetySysNote>Front and Rear Parking Assist Sonar: Standard for Limited trim; Keyless Ignition: Standard for Limited trim</ActiveSafetySysNote>
+            <DynamicBrakeSupport>Standard</DynamicBrakeSupport>
+            <PedestrianAutomaticEmergencyBraking />
+            <AutoReverseSystem>Standard</AutoReverseSystem>
+            <AutomaticPedestrianAlertingSound />
+            <CAN_AACN>Standard</CAN_AACN>
+            <EDR />
+            <KeylessIgnition />
+            <DaytimeRunningLight>Standard</DaytimeRunningLight>
+            <LowerBeamHeadlampLightSource />
+            <SemiautomaticHeadlampBeamSwitching>Standard</SemiautomaticHeadlampBeamSwitching>
+            <AdaptiveDrivingBeam />
+            <SAEAutomationLevel />
+            <SAEAutomationLevel_to />
+            <RearCrossTrafficAlert />
+            <GCWR />
+            <GCWR_to />
+            <NCSANote />
+            <NCSAMappingException />
+            <NCSAMapExcApprovedOn />
+            <NCSAMapExcApprovedBy />
+            <GVWR_to />
+            <ErrorText>0 - VIN decoded clean. Check Digit (9th position) is correct</ErrorText>
+            <RearAutomaticEmergencyBraking />
+            <BlindSpotIntervention />
+            <LaneCenteringAssistance />
+            <NonLandUse />
+            <VehicleDescriptor>JTEBU5JR*J5</VehicleDescriptor>
+        </DecodedVINValues>
+    </Results>
+</Response>

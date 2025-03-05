@@ -9,6 +9,140 @@ servers:
     description: Production Server
 
 paths:
+  "/functions/v1/decode-vin/{VIN}":
+    get:
+      tags:
+        - decode
+      summary: decode-vin
+      description: Full VIN decode
+      parameters:
+        - name: VIN
+          in: path
+          description: The Vehicle Identification Number to decode
+          required: true
+          schema:
+            type: string
+            default: "JTEBU5JRXJ5543007"
+        - name: format
+          in: query
+          description: Response format (json or xml)
+          required: false
+          default: json
+          schema:
+            type: string
+            default: "json"
+            enum: [json, xml]
+        - name: FlatFile
+          in: query
+          description: Whether to return a simplified response format
+          required: false
+          default: false
+          schema:
+            type: string
+            default: "true"
+            enum: [true, false]
+        - name: modelyear
+          in: query
+          description: The model year of the vehicle (optional)
+          required: false
+          schema:
+            type: string
+            default: ""
+      responses:
+        "200":
+          description: VIN decoded successfully
+          content:
+            application/json:
+              examples:
+                flatfile-true:
+                  summary: JSON response with FlatFile=true
+                  value: {
+                    "Count": 1,
+                    "Message": "Results returned successfully",
+                    "SearchCriteria": "VIN(s): JTEBU5JRXJ5543007",
+                    "Results": [{
+                      "ABS": "Standard",
+                      "Make": "TOYOTA",
+                      "Model": "4-Runner",
+                      "ModelYear": "2018",
+                      "Trim": "SR5 Premium",
+                      "VIN": "JTEBU5JRXJ5543007",
+                      "ErrorText": "0 - VIN decoded clean. Check Digit (9th position) is correct"
+                    }]
+                  }
+                flatfile-false:
+                  summary: JSON response with FlatFile=false
+                  value: {
+                    "Count": 1,
+                    "Message": "Results returned successfully",
+                    "SearchCriteria": "VIN(s): JTEBU5JRXJ5543007",
+                    "Results": [{
+                      "Variable": "ABS",
+                      "Value": "Standard",
+                      "ValueId": "1",
+                      "Variable ID": 86,
+                      "Variable Name": "Antilock Braking System (ABS)",
+                      "GroupName": "Brake System"
+                    },
+                    {
+                      "Variable": "Make",
+                      "Value": "TOYOTA",
+                      "ValueId": "448",
+                      "Variable ID": 26,
+                      "Variable Name": "Make",
+                      "GroupName": "Vehicle"
+                    }]
+                  }
+            application/xml:
+              examples:
+                flatfile-true:
+                  summary: XML response with FlatFile=true
+                  value: |
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <DecodeVINValuesBatch>
+                      <Count>1</Count>
+                      <Message>Results returned successfully</Message>
+                      <SearchCriteria>VIN(s): JTEBU5JRXJ5543007</SearchCriteria>
+                      <Results>
+                        <ABS>Standard</ABS>
+                        <Make>TOYOTA</Make>
+                        <Model>4-Runner</Model>
+                        <ModelYear>2018</ModelYear>
+                        <Trim>SR5 Premium</Trim>
+                        <VIN>JTEBU5JRXJ5543007</VIN>
+                        <ErrorText>0 - VIN decoded clean. Check Digit (9th position) is correct</ErrorText>
+                      </Results>
+                    </DecodeVINValuesBatch>
+                flatfile-false:
+                  summary: XML response with FlatFile=false
+                  value: |
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <DecodeVINValuesBatch>
+                      <Count>1</Count>
+                      <Message>Results returned successfully</Message>
+                      <SearchCriteria>VIN(s): JTEBU5JRXJ5543007</SearchCriteria>
+                      <Results>
+                        <Variable>
+                          <Value>Standard</Value>
+                          <ValueId>1</ValueId>
+                          <Variable ID>86</Variable ID>
+                          <Variable Name>Antilock Braking System (ABS)</Variable Name>
+                          <GroupName>Brake System</GroupName>
+                        </Variable>
+                        <Variable>
+                          <Value>TOYOTA</Value>
+                          <ValueId>448</ValueId>
+                          <Variable ID>26</Variable ID>
+                          <Variable Name>Make</Variable Name>
+                          <GroupName>Vehicle</GroupName>
+                        </Variable>
+                      </Results>
+                    </DecodeVINValuesBatch>
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "500":
+          $ref: "#/components/responses/ServerError"
+
   /decode-vin-lite/{vin}:
     get:
       summary: Decode a VIN
@@ -105,3 +239,38 @@ paths:
                 <Error>
                   <Message>Server Error: Unable to decode VIN</Message>
                 </Error>
+
+components:
+  responses:
+    BadRequest:
+      description: Invalid VIN or request parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Invalid VIN format"
+        application/xml:
+          example: |
+            <?xml version="1.0" encoding="UTF-8"?>
+            <Error>
+              <Message>Invalid VIN format</Message>
+            </Error>
+    ServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Server Error: Unable to decode VIN"
+        application/xml:
+          example: |
+            <?xml version="1.0" encoding="UTF-8"?>
+            <Error>
+              <Message>Server Error: Unable to decode VIN</Message>
+            </Error>
