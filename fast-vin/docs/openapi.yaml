@@ -32,7 +32,7 @@ paths:
             type: string
             default: "json"
             enum: [json, xml]
-        - name: FlatFile
+        - name: flatfile
           in: query
           description: Whether to return a simplified response format
           required: false
@@ -55,7 +55,7 @@ paths:
             application/json:
               examples:
                 flatfile-true:
-                  summary: JSON response with FlatFile=true
+                  summary: JSON response with flatfile=true
                   value: {
                     "Count": 1,
                     "Message": "Results returned successfully",
@@ -71,7 +71,7 @@ paths:
                     }]
                   }
                 flatfile-false:
-                  summary: JSON response with FlatFile=false
+                  summary: JSON response with flatfile=false
                   value: {
                     "Count": 1,
                     "Message": "Results returned successfully",
@@ -96,7 +96,7 @@ paths:
             application/xml:
               examples:
                 flatfile-true:
-                  summary: XML response with FlatFile=true
+                  summary: XML response with flatfile=true
                   value: |
                     <?xml version="1.0" encoding="UTF-8"?>
                     <DecodeVINValuesBatch>
@@ -114,7 +114,7 @@ paths:
                       </Results>
                     </DecodeVINValuesBatch>
                 flatfile-false:
-                  summary: XML response with FlatFile=false
+                  summary: XML response with flatfile=false
                   value: |
                     <?xml version="1.0" encoding="UTF-8"?>
                     <DecodeVINValuesBatch>

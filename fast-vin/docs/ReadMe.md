@@ -14,87 +14,121 @@ The **Fast VIN API** allows users to decode **Vehicle Identification Numbers (VI
 
 ## 📌 Endpoints
 
-### **`GET /decode-vin-lite/{vin}`**
-**Description:** Decodes a VIN and retrieves vehicle details.
+### **`GET /decode-vin-full/{VIN}`**
+**Description:** Full VIN decode with complete vehicle details from NHTSA database (140+ fields).
 
 #### ✅ Parameters:
 | Name       | Type     | Required | Description |
-|------------|---------|----------|------------|
-| `vin`      | `string` | ✅ Yes  | The **Vehicle Identification Number (VIN)** |
-| `modelyear` | `string` | ❌ No  | The model year of the vehicle (optional) |
-| `format`   | `string` | ❌ No  | Response format: `json` or `xml` (default: `json`) |
+|------------|----------|----------|-------------|
+| `VIN`      | `string` | ✅ Yes   | The **Vehicle Identification Number (VIN)** |
+| `format`   | `string` | ❌ No    | Response format: `json` or `xml` (default: `json`) |
+| `flatfile` | `string` | ❌ No    | Whether to return a simplified response format: `true` or `false` (default: `true`) |
+| `modelyear`| `string` | ❌ No    | The model year of the vehicle (optional) |
+
+### **`GET /decode-vin/{VIN}`**
+**Description:** Standard VIN decode with comprehensive vehicle details (~137 fields).
+
+#### ✅ Parameters:
+| Name       | Type     | Required | Description |
+|------------|----------|----------|-------------|
+| `VIN`      | `string` | ✅ Yes   | The **Vehicle Identification Number (VIN)** |
+| `format`   | `string` | ❌ No    | Response format: `json` or `xml` (default: `json`) |
+| `flatfile` | `string` | ❌ No    | Whether to return a simplified response format: `true` or `false` (default: `true`) |
+| `modelyear`| `string` | ❌ No    | The model year of the vehicle (optional) |
+
+### **`GET /decode-vin-lite/{vin}`**
+**Description:** Basic VIN decode with essential vehicle details (6 fields).
+
+#### ✅ Parameters:
+| Name       | Type     | Required | Description |
+|------------|----------|----------|-------------|
+| `vin`      | `string` | ✅ Yes   | The **Vehicle Identification Number (VIN)** |
+| `modelyear`| `string` | ❌ No    | The model year of the vehicle (optional) |
+| `format`   | `string` | ❌ No    | Response format: `json` or `xml` (default: `json`) |
 
 ---
 
 ## 📄 Example Requests & Responses
 
+### Full Decode Example
 
 #### Request:
 ```bash
-✅ 200 - Success
+curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin-full/JTEBU5JRYJ5543007?format=json&flatfile=true"
+```
 
+#### Response (JSON):
+```json
+{
+  "Count": 1,
+  "Message": "Results returned successfully",
+  "SearchCriteria": "VIN(s): JTEBU5JRYJ5543007",
+  "Results": [{
+    "ABS": "Standard",
+    "ActiveSafetySysNote": "Front and Rear Parking Assist Sonar: Standard for Limited trim",
+    "BodyClass": "Sport Utility Vehicle (SUV)/Multi-Purpose Vehicle (MPV)",
+    "DisplacementL": "4",
+    "DriveType": "4WD/4-Wheel Drive/4x4",
+    "EngineConfiguration": "V-Shaped",
+    "EngineCylinders": "6",
+    "EngineHP": "270",
+    "Make": "TOYOTA",
+    "Model": "4-Runner",
+    "ModelYear": "2018",
+    "Trim": "SR5 Premium",
+    "VIN": "JTEBU5JRYJ5543007"
+  }]
+}
+```
+
+### Standard Decode Example
+
+#### Request:
+```bash
+curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin/JTEBU5JRYJ5543007?format=json&flatfile=true"
+```
+
+#### Response (JSON):
+```json
+{
+  "Count": 1,
+  "Message": "Results returned successfully",
+  "SearchCriteria": "VIN(s): JTEBU5JRYJ5543007",
+  "Results": [{
+    "Make": "TOYOTA",
+    "Model": "4-Runner",
+    "ModelYear": "2018",
+    "PlantCountry": "JAPAN",
+    "Series": "GRN280L/GRN285L",
+    "Trim": "SR5 Premium",
+    "VehicleType": "MULTIPURPOSE PASSENGER VEHICLE (MPV)",
+    "VIN": "JTEBU5JRYJ5543007"
+  }]
+}
+```
+
+### Lite Decode Example
+
+#### Request:
+```bash
 curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin-lite/JTEBU5JRYJ5543007?format=json"
+```
 
-Response (JSON):
-
+#### Response (JSON):
+```json
 {
-  "VIN": "JTEBU5JRYJ5543007",
-  "Make": "TOYOTA",
-  "Model": "4-Runner",
-  "ModelYear": "2018",
-  "Trim": "SR5 Premium",
-  "ErrorText": "0 - VIN decoded clean. Check Digit (9th position) is correct"
+  "Count": 1,
+  "Message": "Results returned successfully",
+  "SearchCriteria": "VIN(s): JTEBU5JRYJ5543007",
+  "Results": [{
+    "Make": "TOYOTA",
+    "Model": "4-Runner",
+    "ModelYear": "2018",
+    "Trim": "SR5 Premium",
+    "VIN": "JTEBU5JRYJ5543007"
+  }]
 }
-
-Response (XML):
-
-<?xml version="1.0" encoding="UTF-8"?>
-<VINLookup>
-  <VIN>JTEBU5JRYJ5543007</VIN>
-  <Make>TOYOTA</Make>
-  <Model>4-Runner</Model>
-  <ModelYear>2018</ModelYear>
-  <Trim>SR5 Premium</Trim>
-  <ErrorText>0 - VIN decoded clean. Check Digit (9th position) is correct</ErrorText>
-</VINLookup>
-
-❌ 404 - Invalid VIN Format
-
-Request:
-
-curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin/INVALIDVIN?format=json"
-
-Response (JSON):
-
-{
-  "Error": "Not Found"
-}
-
-Response (XML):
-
-<?xml version="1.0" encoding="UTF-8"?>
-<Error>
-  <Message>Invalid VIN format</Message>
-</Error>
-
-❌ 500 - Server Error
-
-Request:
-
-curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin/JTEBU5JRYJ5543007?format=json"
-
-Response (JSON):
-
-{
-  "error": "Server Error: Unable to decode VIN"
-}
-
-Response (XML):
-
-<?xml version="1.0" encoding="UTF-8"?>
-<Error>
-  <Message>Server Error: Unable to decode VIN</Message>
-</Error>
+```
 
 ## Field Mapping
 
