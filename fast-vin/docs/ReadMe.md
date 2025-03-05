@@ -28,15 +28,17 @@ The **Fast VIN API** allows users to decode **Vehicle Identification Numbers (VI
 
 ## 📄 Example Requests & Responses
 
-### ✅ **200 - Success**
+
 #### Request:
 ```bash
-curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin/JTEBU5JRXJ5543007?format=json"
+✅ 200 - Success
+
+curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin-lite/JTEBU5JRYJ5543007?format=json"
 
 Response (JSON):
 
 {
-  "VIN": "JTEBU5JRXJ5543007",
+  "VIN": "JTEBU5JRYJ5543007",
   "Make": "TOYOTA",
   "Model": "4-Runner",
   "ModelYear": "2018",
@@ -48,7 +50,7 @@ Response (XML):
 
 <?xml version="1.0" encoding="UTF-8"?>
 <VINLookup>
-  <VIN>JTEBU5JRXJ5543007</VIN>
+  <VIN>JTEBU5JRYJ5543007</VIN>
   <Make>TOYOTA</Make>
   <Model>4-Runner</Model>
   <ModelYear>2018</ModelYear>
@@ -65,7 +67,7 @@ curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin/INVALIDVIN?format=json"
 Response (JSON):
 
 {
-  "error": "Invalid VIN format"
+  "Error": "Not Found"
 }
 
 Response (XML):
@@ -79,7 +81,7 @@ Response (XML):
 
 Request:
 
-curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin/JTEBU5JRXJ5543007?format=json"
+curl -X GET "https://fast-vin.p.rapidapi.com/decode-vin/JTEBU5JRYJ5543007?format=json"
 
 Response (JSON):
 
@@ -135,7 +137,7 @@ The following table shows all available fields and their availability across dif
 | TransmissionSpeeds | string | 5 | ❌ | ❌ | ✅ |
 | TransmissionStyle | string | Automatic | ❌ | ❌ | ✅ |
 | Trim | string | SR5/SR5 Premium/TRD Off Road/TRD Off Road Premium/Ltd/TRD Pro | ✅ | ✅ | ✅ |
-| VIN | string | JTEBU5JRXJ5543007 | ✅ | ✅ | ✅ |
+| VIN | string | JTEBU5JRYJ5543007 | ✅ | ✅ | ✅ |
 | VehicleType | string | MULTIPURPOSE PASSENGER VEHICLE (MPV) | ❌ | ✅ | ✅ |
 
 > Note: This is a subset of the most commonly used fields. The full API response includes additional fields. Fields marked with ✅ are included in the respective endpoint response, while ❌ indicates the field is not available in that endpoint.
