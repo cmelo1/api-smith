@@ -1,0 +1,151 @@
+fieldName,format,sampleValue,lite,standard,full
+ABS,string,Standard,false,true,true
+ActiveSafetySysNote,string,"Front and Rear Parking Assist Sonar: Standard for Limited trim; Keyless Ignition: Standard for Limited trim",false,false,true
+AdaptiveCruiseControl,string,null,false,false,true
+AdaptiveDrivingBeam,string,null,false,false,true
+AdaptiveHeadlights,string,null,false,false,true
+AdditionalErrorText,string,null,false,false,true
+AirBagLocCurtain,string,All Rows,false,false,true
+AirBagLocFront,string,1st Row (Driver and Passenger),false,false,true
+AirBagLocKnee,string,1st Row (Driver and Passenger),false,false,true
+AirBagLocSeatCushion,string,null,false,false,true
+AirBagLocSide,string,1st Row (Driver and Passenger),false,false,true
+AutoReverseSystem,string,Standard,false,false,true
+AutomaticPedestrianAlertingSound,string,null,false,false,true
+AxleConfiguration,string,null,false,false,true
+Axles,string,2,false,false,true
+BasePrice,decimal,34810.00,false,false,true
+BatteryA,string,null,false,false,true
+BatteryA_to,string,null,false,false,true
+BatteryCells,string,null,false,false,true
+BatteryInfo,string,null,false,false,true
+BatteryKWh,string,null,false,false,true
+BatteryKWh_to,string,null,false,false,true
+BatteryModules,string,null,false,false,true
+BatteryPacks,string,1,false,false,true
+BatteryType,string,null,false,false,true
+BatteryV,string,null,false,false,true
+BatteryV_to,string,null,false,false,true
+BedLengthIN,string,null,false,false,true
+BedType,string,null,false,false,true
+BlindSpotIntervention,string,null,false,false,true
+BlindSpotMon,string,null,false,true,true
+BodyCabType,string,null,false,true,true
+BodyClass,string,Sport Utility Vehicle (SUV)/Multi-Purpose Vehicle (MPV),false,true,true
+BrakeSystemDesc,string,Calipers / Front Vented Discs,false,false,true
+BrakeSystemType,string,null,false,false,true
+BusFloorConfigType,string,Not Applicable,false,true,true
+BusLength,string,null,false,true,true
+BusType,string,Not Applicable,false,true,true
+CAN_AACN,string,Standard,false,false,true
+CIB,string,null,false,false,true
+CashForClunkers,string,null,false,false,true
+ChargerLevel,string,null,false,false,true
+ChargerPowerKW,string,null,false,false,true
+CoolingType,string,Water,false,true,true
+CurbWeightLB,string,null,false,false,true
+CustomMotorcycleType,string,Not Applicable,false,false,true
+DaytimeRunningLight,string,Standard,false,false,true
+DestinationMarket,string,null,false,false,true
+DisplacementCC,string,4000,false,true,true
+DisplacementCI,string,244.0949763789,false,true,true
+DisplacementL,string,4,false,true,true
+Doors,string,5,false,false,true
+DriveType,string,4WD/4-Wheel Drive/4x4,false,false,true
+DriverAssist,string,null,false,false,true
+DynamicBrakeSupport,string,Standard,false,false,true
+EDR,string,null,false,false,true
+ESC,string,Standard,false,false,true
+EVDriveUnit,string,null,false,false,true
+ElectrificationLevel,string,null,false,false,true
+EngineConfiguration,string,V-Shaped,false,false,true
+EngineCycles,string,4,false,false,true
+EngineCylinders,string,6,false,false,true
+EngineHP,string,270,false,false,true
+EngineHP_to,string,null,false,false,true
+EngineKW,string,null,false,false,true
+EngineManufacturer,string,Toyota,false,false,true
+EngineModel,string,1GR-FE,false,false,true
+EntertainmentSystem,string,null,false,false,true
+ErrorCode,string,0,true,true,true
+ErrorText,string,0 - VIN decoded clean. Check Digit (9th position) is correct,true,true,true
+ForwardCollisionWarning,string,Standard,false,false,true
+FuelInjectionType,string,Multipoint Fuel Injection (MPFI),false,false,true
+FuelTypePrimary,string,Gasoline,false,false,true
+FuelTypeSecondary,string,null,false,false,true
+GCWR,string,null,false,false,true
+GCWR_to,string,null,false,false,true
+GVWR,string,"Class 2E: 6,001 - 7,000 lb (2,722 - 3,175 kg)",false,false,true
+GVWR_to,string,null,false,false,true
+KeylessIgnition,string,null,false,false,true
+LaneCenteringAssistance,string,null,false,false,true
+LaneDepartureWarning,string,Standard,false,false,true
+LaneKeepSystem,string,null,false,false,true
+LowerBeamHeadlampLightSource,string,null,false,false,true
+Make,string,TOYOTA,true,true,true
+MakeID,string,448,false,true,true
+Manufacturer,string,TOYOTA MOTOR CORPORATION,false,true,true
+ManufacturerId,string,1057,false,true,true
+Model,string,4-Runner,true,true,true
+ModelID,string,2216,false,true,true
+ModelYear,string,2018,true,true,true
+MotorcycleChassisType,string,Not Applicable,false,false,true
+MotorcycleSuspensionType,string,Not Applicable,false,false,true
+NCSABodyType,string,null,false,false,true
+NCSAMake,string,null,false,false,true
+NCSAMapExcApprovedBy,string,null,false,false,true
+NCSAMapExcApprovedOn,string,null,false,false,true
+NCSAMappingException,string,null,false,false,true
+NCSAModel,string,null,false,false,true
+NCSANote,string,null,false,false,true
+NonLandUse,string,null,false,false,true
+Note,string,null,false,false,true
+OtherBusInfo,string,null,false,false,true
+OtherEngineInfo,string,"PORT / Sequential MPI    , Sequential MPI  ",false,false,true
+OtherMotorcycleInfo,string,null,false,false,true
+OtherRestraintSystemInfo,string,null,false,false,true
+OtherTrailerInfo,string,null,false,false,true
+ParkAssist,string,null,false,false,true
+PedestrianAutomaticEmergencyBraking,string,null,false,false,true
+PlantCity,string,TAHARA,false,true,true
+PlantCompanyName,string,Toyota Motor Corporation - Tahara Plant,false,true,true
+PlantCountry,string,JAPAN,false,true,true
+PlantState,string,AICHI,false,true,true
+PossibleValues,string,null,false,false,true
+Pretensioner,string,Yes,false,false,true
+RearAutomaticEmergencyBraking,string,null,false,false,true
+RearCrossTrafficAlert,string,null,false,false,true
+RearVisibilitySystem,string,Standard,false,false,true
+SAEAutomationLevel,string,null,false,false,true
+SAEAutomationLevel_to,string,null,false,false,true
+SeatBeltsAll,string,Manual,false,false,true
+SeatRows,string,2,false,false,true
+Seats,string,5,false,false,true
+SemiautomaticHeadlampBeamSwitching,string,Standard,false,false,true
+Series,string,GRN280L/GRN285L,false,true,true
+Series2,string,Wagon body style,false,true,true
+SteeringLocation,string,Left-Hand Drive (LHD),false,false,true
+SuggestedVIN,string,null,false,false,true
+TPMS,string,Direct,false,false,true
+TopSpeedMPH,string,114,false,false,true
+TrackWidth,string,null,false,false,true
+TractionControl,string,Standard,false,false,true
+TrailerBodyType,string,Not Applicable,false,false,true
+TrailerLength,string,null,false,false,true
+TrailerType,string,Not Applicable,false,false,true
+TransmissionSpeeds,string,5,false,false,true
+TransmissionStyle,string,Automatic,false,false,true
+Trim,string,SR5/SR5 Premium/TRD Off Road/TRD Off Road Premium/Ltd/TRD Pro,true,true,true
+Trim2,string,Base Grade,false,true,true
+Turbo,string,null,false,false,true
+VIN,string,JTEBU5JRXJ5543007,true,true,true
+ValveTrainDesign,string,Dual Overhead Cam (DOHC),false,false,true
+VehicleDescriptor,string,JTEBU5JR*J5,false,true,true
+VehicleType,string,MULTIPURPOSE PASSENGER VEHICLE (MPV),false,true,true
+WheelBaseLong,string,null,false,false,true
+WheelBaseShort,string,109.80,false,false,true
+WheelBaseType,string,Standard,false,false,true
+WheelSizeFront,string,null,false,false,true
+WheelSizeRear,string,null,false,false,true
+Wheels,string,4,false,false,true
+Windows,string,null,false,false,true 

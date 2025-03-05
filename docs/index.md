@@ -34,7 +34,7 @@ Choose an API from the list above to get started.
 
 If you encounter any issues or have questions, please:
 1. Check the specific API documentation
-2. Open an issue on our [GitHub repository](https://github.com/${{ github.repository }})
+2. Open an issue on our [GitHub repository](https://github.com/cmelo1/api-smith)
 
 ## Contributing
 

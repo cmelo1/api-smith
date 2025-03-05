@@ -33,6 +33,12 @@ We welcome contributions! If you'd like to improve any of our APIs:
 
 This repository is licensed under [MIT License](LICENSE).
 
+## Support
+
+If you encounter any issues or have questions, please:
+1. Check the specific API documentation
+2. Open an issue on our [GitHub repository](https://github.com/cmelo1/api-smith)
+
 ---
 
 For detailed documentation, visit our [GitHub Pages](https://cmelo1.github.io/api-smith). 🚀
