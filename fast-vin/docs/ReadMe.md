@@ -8,7 +8,7 @@ The **Fast VIN API** allows users to decode **Vehicle Identification Numbers (VI
 ---
 
 ## 🔗 API Reference
-👉 **[View API Docs](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/fast-vin-api-docs/main/docs/openapi.yaml)**
+👉 **[View API Docs](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/cmelo1/api-smith/main/fast-vin/docs/openapi.yaml)**
 
 ---
 
