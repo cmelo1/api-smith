@@ -322,3 +322,54 @@ paths:
             type: string
             enum: [json, xml]
           description: The response format (`json`
+
+components:
+      responses:
+    BadRequest:
+      description: Invalid VIN or request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid VIN format"
+            application/xml:
+              example: |
+                <?xml version="1.0" encoding="UTF-8"?>
+                <Error>
+                  <Message>Invalid VIN format</Message>
+                </Error>
+    ServerError:
+      description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Server Error: Unable to decode VIN"
+            application/xml:
+              example: |
+                <?xml version="1.0" encoding="UTF-8"?>
+                <Error>
+                  <Message>Server Error: Unable to decode VIN</Message>
+                </Error>
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Not Found"
+        application/xml:
+          example: |
+            <?xml version="1.0" encoding="UTF-8"?>
+            <Error>
+              <Message>Not Found</Message>
+            </Error>
