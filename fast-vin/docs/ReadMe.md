@@ -58,7 +58,7 @@ Response (XML):
   <ErrorText>0 - VIN decoded clean. Check Digit (9th position) is correct</ErrorText>
 </VINLookup>
 
-❌ 400 - Invalid VIN Format
+❌ 404 - Invalid VIN Format
 
 Request:
 
